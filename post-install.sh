@@ -1,10 +1,18 @@
 #!/bin/bash
 
+sudo dnf update -y
+
 # Install RPM Fusion
 echo -------------------------------------------------
 echo Install RPM Fusion
 echo -------------------------------------------------
-sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
+
+sudo dnf install snapd -y
+
+sudo snap install obsidian --classic
+
+
 
 # Fix codec problems
 echo -------------------------------------------------
@@ -47,32 +55,73 @@ echo -------------------------------------------------
 echo Install gaming tools
 echo -------------------------------------------------
 sudo dnf install steam -y
-flatpak install flathub com.vysp3r.ProtonPlus
-flatpak install flathub com.steamgriddb.steam-rom-manager
-flatpak install flathub com.steamgriddb.SGDBoop
-flatpak install flathub info.cemu.Cemu
-flatpak install flathub com.usebottles.bottles
-flatpak install flathub com.heroicgameslauncher.hgl
-flatpak install flathub dev.lizardbyte.app.Sunshine
+flatpak install flathub com.vysp3r.ProtonPlus -y
+flatpak install flathub com.steamgriddb.steam-rom-manager -y
+flatpak install flathub com.steamgriddb.SGDBoop -y
+flatpak install flathub info.cemu.Cemu -y 
+flatpak install flathub com.usebottles.bottles -y
+flatpak install flathub com.heroicgameslauncher.hgl -y
+flatpak install flathub dev.lizardbyte.app.Sunshine -y
+
+# Instalar aplicativos
+echo -------------------------------------------------
+echo Install softwares
+echo -------------------------------------------------
+sudo dnf install vim -y
+sudo dnf install blender -y
+sudo dnf install btop -y
+sudo dnf install cpu-x -y
+sudo dnf install dropbox -y
+sudo dnf install filezilla -y
+sudo dnf install fontforge -y
+sudo dnf install gimp -y
+sudo dnf install htop -y
+sudo dnf install inkscape -y
+sudo dnf install jupyterlab -y
+sudo dnf install jupyter-notebook -y
+sudo dnf install kitty -y
+sudo dnf install lollypop -y
+sudo dnf install lutris -y
+sudo dnf install minder -y
+sudo dnf install mupdf-gl
+sudo dnf install obs-studio -y
+sudo dnf install obsidian -y
+sudo dnf install okular -y
+sudo dnf install qbittorrent -y
+sudo dnf install rawtherapee -y
+sudo dnf install retroarch -y
+sudo dnf install scribus -y
+sudo dnf install syncthing -y
+sudo dnf install teams-for-linux -y
+sudo dnf install virt-manager -y
+sudo dnf install vscode -y
+sudo dnf install vlc -y
+sudo dnf install xasy -y
 
 # Instalar aplicativos em flatpak
 echo -------------------------------------------------
 echo -------------------------------------------------
-flatpak install flathub com.discordapp.Discord
-flatpak install flathub tech.feliciano.pocket-casts
-flatpak install flathub com.obsproject.Studio
-flatpak install flathub io.github.celluloid_player.Celluloid
-flatpak install flathub org.gnome.Boxes
+flatpak install flathub io.github.prateekmedia.appimagepool
+flatpak install flathub com.bitwarden.desktop
 flatpak install flathub com.mattjakeman.ExtensionManager
-flatpak install flathub com.github.tchx84.Flatseal
-flatpak install flathub org.nickvision.tubeconverter
-flatpak install flathub org.localsend.localsend_app
-flatpak install flathub page.codeberg.libre_menu_editor.LibreMenuEditor
-flatpak install flathub de.haeckerfelix.Fragments
-flatpak install flathub com.rtosta.zapzap
-flatpak install flathub com.discordapp.Discord
-flatpak install flathub io.github.pwr_solaar.solaar
-flatpak install flathub io.github.brunofin.Cohesion
+flatpak install flathub md.obsidian.Obsidian -y
+
+
+#flatpak install flathub com.discordapp.Discord
+#flatpak install flathub tech.feliciano.pocket-casts
+#flatpak install flathub com.obsproject.Studio
+#flatpak install flathub io.github.celluloid_player.Celluloid
+#flatpak install flathub org.gnome.Boxes
+#flatpak install flathub com.mattjakeman.ExtensionManager
+#flatpak install flathub com.github.tchx84.Flatseal
+#flatpak install flathub org.nickvision.tubeconverter
+#flatpak install flathub org.localsend.localsend_app
+#flatpak install flathub page.codeberg.libre_menu_editor.LibreMenuEditor
+#flatpak install flathub de.haeckerfelix.Fragments
+#flatpak install flathub com.rtosta.zapzap
+#flatpak install flathub com.discordapp.Discord
+#flatpak install flathub io.github.pwr_solaar.solaar
+#flatpak install flathub io.github.brunofin.Cohesion
 
 # Instalar as fontes que estão na pasta: Fontes
 # Aplicativos para instalar depois manualmente: DaVinci Resolve, Figma for Desktop, Insync
